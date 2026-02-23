@@ -1,0 +1,31 @@
+<!-- 실패 -->
+
+<network>
+  <name>default</name>
+  <uuid>75e6177b-6818-44ff-8bbe-63105dddd974</uuid>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='virbr0' stp='on' delay='0'/>
+  <mac address=':::::'/>
+  <domain name='ocp-cluster.chosunhs.ai'/>
+  <ip address='192.168.122.1' netmask='255.255.255.0'>
+    <dns>
+      <host ip='192.168.122.10'>
+        <hostname>api.ocp-cluster.chosunhs.ai</hostname>
+        <hostname>api-int.ocp-cluster.chosunhs.ai</hostname>
+      </host>
+      <host ip='192.168.122.12'>
+        <hostname>console-openshift-console.apps.ocp-cluster.chosunhs.ai</hostname>
+      </host>
+    </dns>
+    <dhcp>
+      <range start='192.168.122.2' end='192.168.122.254'/>
+      <host mac=':::::' name='ocp1' ip='192.168.122.145'/>
+      <host mac=':::::' name='ocp2' ip='192.168.122.39'/>
+      <host mac=':::::' name='ocp3' ip='192.168.122.157'/>
+    </dhcp>
+  </ip>
+</network>
